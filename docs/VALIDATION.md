@@ -50,11 +50,14 @@
 
 training/records.example.jsonl에 dataset-check를 실행했습니다. 규격 검사는 통과했지만 승인 레코드는 0개입니다. 이 샘플은 학습 데이터 형식을 설명하는 초안이며 학습 준비 완료 상태가 아닙니다.
 
+## GitHub 업로드 후 확인
+
+2026-09-27 개인 비공개 저장소 sji21/final-project-starter에 업로드했습니다. 최초 코드 커밋 06d4394e7bcc03a3a1ebabad06409a5ab1246835의 [GitHub Actions 검사](https://github.com/sji21/final-project-starter/actions/runs/36255693667)가 Ubuntu·Python 3.12에서 통과했습니다. 검사 항목은 코드 린트·서식·자동 테스트·JavaScript 구문 검사입니다.
+
 ## 남은 검증
 
 - 실제 모델·LoRA 연결, 구조화 출력 지원, GPU 메모리·지연·비용.
 - 독립 검수된 실데이터 평가셋과 베이스 모델 대비 학습 후 평가.
-- Docker 빌드, GitHub 원격 CI, 배포 환경.
+- Docker 빌드와 배포 환경.
 - 다중 사용자 인증·권한·팀 운영, 큰 문서 검색 품질.
 - 모바일·다른 브라우저별 화면 검증.
-

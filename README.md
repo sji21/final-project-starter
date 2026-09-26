@@ -101,7 +101,7 @@ python -m pytest -q
 node --check web/app.js
 ```
 
-의존성은 검증 환경의 requirements.lock으로 고정했습니다. GitHub Actions 설정은 포함했지만 원격 저장소에 올리거나 CI를 실행한 것은 아닙니다. Dockerfile·Compose도 준비했으나 컨테이너 빌드·배포는 검증하지 않았습니다.
+의존성은 검증 환경의 requirements.lock으로 고정했습니다. 2026-09-27 최초 업로드 코드의 [GitHub Actions 검사](https://github.com/sji21/final-project-starter/actions/runs/36255693667)가 통과했습니다. Dockerfile·Compose도 준비했으나 컨테이너 빌드·배포는 검증하지 않았습니다.
 
 [실제 검증 기록](docs/VALIDATION.md) · [구조](docs/ARCHITECTURE.md) · [평가](docs/EVALUATION.md) · [RunPod 연결 준비](docs/RUNPOD.md) · [5인팀 백로그](docs/TEAM_BACKLOG.md)
 
