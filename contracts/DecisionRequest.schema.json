@@ -1,0 +1,57 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "revision": {
+      "minimum": 1,
+      "title": "Revision",
+      "type": "integer"
+    },
+    "criterion_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$",
+      "title": "Criterion Id",
+      "type": "string"
+    },
+    "action": {
+      "enum": [
+        "accept",
+        "reject",
+        "edit"
+      ],
+      "title": "Action",
+      "type": "string"
+    },
+    "actor": {
+      "maxLength": 80,
+      "minLength": 1,
+      "title": "Actor",
+      "type": "string"
+    },
+    "note": {
+      "default": "",
+      "maxLength": 3000,
+      "title": "Note",
+      "type": "string"
+    },
+    "edited_suggestion": {
+      "anyOf": [
+        {
+          "maxLength": 3000,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Edited Suggestion"
+    }
+  },
+  "required": [
+    "revision",
+    "criterion_id",
+    "action",
+    "actor"
+  ],
+  "title": "DecisionRequest",
+  "type": "object"
+}

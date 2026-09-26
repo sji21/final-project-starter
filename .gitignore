@@ -1,0 +1,20 @@
+.venv/
+.data/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+*.pyc
+.env
+artifacts/local/
+
+
+# Local datasets, credentials, and platform output
+.env.*
+!.env.example
+*.sqlite3
+*.sqlite3-*
+*.db
+*.log
+.DS_Store
+Thumbs.db
+training/local/

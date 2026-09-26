@@ -1,0 +1,30 @@
+{
+  "dataset_id": "cs-quality-demo-v1",
+  "pack_id": "cs-quality",
+  "purpose": "fixture_regression_only",
+  "human_reviewed": false,
+  "documents_hash": "93de3038d2f19f0126d5802a46cabafd294149109151dadc5cd4a36b0d995f19",
+  "items": [
+    {
+      "criterion_id": "POL-01",
+      "verdict": "conflict",
+      "evidence_chunk_ids": [
+        "TARGET:p2"
+      ]
+    },
+    {
+      "criterion_id": "POL-02",
+      "verdict": "covered",
+      "evidence_chunk_ids": [
+        "TARGET:p2"
+      ]
+    },
+    {
+      "criterion_id": "POL-03",
+      "verdict": "partial",
+      "evidence_chunk_ids": [
+        "TARGET:p2"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "$defs": {
+    "CriticIssue": {
+      "additionalProperties": false,
+      "properties": {
+        "criterion_id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$",
+          "title": "Criterion Id",
+          "type": "string"
+        },
+        "reason": {
+          "maxLength": 1500,
+          "minLength": 1,
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "criterion_id",
+        "reason"
+      ],
+      "title": "CriticIssue",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/CriticIssue"
+      },
+      "maxItems": 30,
+      "title": "Issues",
+      "type": "array"
+    }
+  },
+  "required": [
+    "issues"
+  ],
+  "title": "Critique",
+  "type": "object"
+}

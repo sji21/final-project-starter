@@ -1,0 +1,37 @@
+{
+  "experiment_id": "FILL_ME",
+  "status": "not_run",
+  "task": "FILL_ME",
+  "code_commit": null,
+  "base_model_id": null,
+  "base_model_revision": null,
+  "adapter_name": null,
+  "dataset_hash": null,
+  "split_manifest": null,
+  "training_config": {
+    "quantization": null,
+    "lora_rank": null,
+    "learning_rate": null,
+    "max_sequence_length": null,
+    "epochs": null,
+    "seed": null
+  },
+  "environment": {
+    "python": null,
+    "packages_lock": null,
+    "gpu": null
+  },
+  "cost": {
+    "currency": null,
+    "gpu_hours": null,
+    "storage": null,
+    "total": null
+  },
+  "evaluation": {
+    "baseline_run": null,
+    "finetuned_run": null,
+    "gold_dataset": null,
+    "result_file": null
+  },
+  "limitations": []
+}

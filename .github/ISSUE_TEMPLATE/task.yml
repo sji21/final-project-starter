@@ -1,0 +1,25 @@
+name: 기능 작업
+description: 0.5~2일 크기의 작업을 정의합니다.
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 사용자와 해결할 문제
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 조건과 실패 사례
+      description: 입력, 기대 결과, 실패 시 동작을 적습니다.
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: 담당자와 검토자
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: 의존 작업과 예상 크기
+

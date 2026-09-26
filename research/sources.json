@@ -1,0 +1,452 @@
+{
+  "checked_on": "2026-09-26",
+  "timezone": "Asia/Seoul",
+  "method": "Public README review of selected repositories and static inspection of listed source files; no repository code, training, tests or deployment executed.",
+  "inventory_count": 144,
+  "comparison_count": 25,
+  "priority_repo": "SKN18-FINAL-2TEAM",
+  "readmes": [
+    {
+      "name": "SKN18-FINAL-2TEAM",
+      "title": "HelixOps",
+      "domain": "바이오 연구",
+      "reason": "최우선: 업무 흐름·데이터 품질·모델 경계",
+      "level": "A",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/README.md",
+      "file_sha": "0dba2024e991235a91e4eaa11552b2bbe2a74ac1",
+      "branch": "main"
+    },
+    {
+      "name": "SKN10-FINAL-1Team",
+      "title": "사내 업무 보조",
+      "domain": "사내 업무",
+      "reason": "Swarm·MCP 에이전트 연계",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN10-FINAL-1Team/blob/main/README.md",
+      "file_sha": "cb3705584ae1babe23ebc60bbf32ad4ce2c17a36",
+      "branch": "main"
+    },
+    {
+      "name": "SKN12-FINAL-1TEAM",
+      "title": "NaruTalk",
+      "domain": "제약 영업",
+      "reason": "업종을 좁힌 업무 지원",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN12-FINAL-1TEAM/blob/main/README.md",
+      "file_sha": "18edb0ba4ae4d47f8319c41f06b833a225aa0524",
+      "branch": "main"
+    },
+    {
+      "name": "SKN13-FINAL-1TEAM",
+      "title": "CLIKCA",
+      "domain": "사내 업무",
+      "reason": "문서·일정·보고서 통합",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN13-FINAL-1TEAM/blob/main/README.md",
+      "file_sha": "fc79589aa340fb257012a388ad8eb80a4fce1f74",
+      "branch": "main"
+    },
+    {
+      "name": "SKN13-FINAL-6Team",
+      "title": "NAVI",
+      "domain": "사내 업무",
+      "reason": "문서 검색과 업무 실행",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN13-FINAL-6Team/blob/main/README.md",
+      "file_sha": "6788f9d109da4198017ba9e59936d98b87987fcb",
+      "branch": "main"
+    },
+    {
+      "name": "SKN14-FINAL-3Team",
+      "title": "은행 사내 업무 AI",
+      "domain": "금융",
+      "reason": "sLLM 학습·평가·RunPod",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN14-FINAL-3Team/blob/main/README.md",
+      "file_sha": "c483635b361269a1542ec77255028b9cd161b267",
+      "branch": "main"
+    },
+    {
+      "name": "SKN17-FINAL-2Team",
+      "title": "말하는대로",
+      "domain": "회의",
+      "reason": "회의→액션 아이템",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-FINAL-2Team/blob/main/README.md",
+      "file_sha": "ed0c34d0a96c8ac1c8b5e815062330188152a8ed",
+      "branch": "main"
+    },
+    {
+      "name": "SKN17-FINAL-5Team",
+      "title": "글로벌 AI 무역 비서",
+      "domain": "무역",
+      "reason": "업무 전문성과 문서 산출물",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN17-FINAL-5Team/blob/main/README.md",
+      "file_sha": "c78ce28d9a84ff9553651b0043037e6ba2b43878",
+      "branch": "main"
+    },
+    {
+      "name": "SKN19-FINAL-1Team",
+      "title": "CALL:ACT",
+      "domain": "콜센터",
+      "reason": "상담원 지원 흐름",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN19-FINAL-1Team/blob/main/README.md",
+      "file_sha": "df581a1133233d4c91a151ae7d4e5b079a60449f",
+      "branch": "main"
+    },
+    {
+      "name": "SKN19-FINAL-3Team",
+      "title": "AJC",
+      "domain": "문서 관리",
+      "reason": "변경 영향과 문서 갱신",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN19-FINAL-3Team/blob/main/README.md",
+      "file_sha": "6ed0b4ba5150d82866aafb07056dfe2ff4238a80",
+      "branch": "main"
+    },
+    {
+      "name": "SKN19-FINAL-5Team",
+      "title": "똑소리",
+      "domain": "소비자 상담",
+      "reason": "멀티 에이전트와 근거 검증",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN19-FINAL-5Team/blob/main/README.md",
+      "file_sha": "de651e94320809122073e31f47393216c02fe4bf",
+      "branch": "main"
+    },
+    {
+      "name": "SKN20-FINAL-3TEAM",
+      "title": "ARAE",
+      "domain": "건축",
+      "reason": "구조화 추출·검토 업무",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN20-FINAL-3TEAM/blob/main/README.md",
+      "file_sha": "6e591f17fb31bae1fd9998d15a0fd81e2b9c5902",
+      "branch": "main"
+    },
+    {
+      "name": "SKN20-FINAL-6TEAM",
+      "title": "통합 경영 파트너",
+      "domain": "경영 지원",
+      "reason": "전문 도메인 분업",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN20-FINAL-6TEAM/blob/main/README.md",
+      "file_sha": "68e9b06c83aaeca814e3262ac132568d7189fce4",
+      "branch": "main"
+    },
+    {
+      "name": "SKN21-FINAL-3TEAM",
+      "title": "DUDE",
+      "domain": "사내 업무",
+      "reason": "여러 LoRA 태스크와 평가",
+      "level": "B",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN21-FINAL-3TEAM/blob/main/README.md",
+      "file_sha": "45090dff4dcbdddaec9546fe5f1ba468275db8d6",
+      "branch": "main"
+    },
+    {
+      "name": "SKN24-FINAL-1Team",
+      "title": "회의피하지마 HPM",
+      "domain": "회의",
+      "reason": "회의→태스크→Jira",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN24-FINAL-1Team/blob/main/README.md",
+      "file_sha": "318bc0350130775228bdeedb01fad8ed40f903bf",
+      "branch": "main"
+    },
+    {
+      "name": "SKN24-FINAL-3Team",
+      "title": "ALPLED / AI-DLC",
+      "domain": "개발 문서",
+      "reason": "요구사항·산출물 생성",
+      "level": "B",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN24-FINAL-3Team/blob/main/README.md",
+      "file_sha": "6526ab89e485b0c300e1fa8a065f5441d7887c48",
+      "branch": "main"
+    },
+    {
+      "name": "SKN25-FINAL-3Team",
+      "title": "꽃보다 특허",
+      "domain": "특허 문서",
+      "reason": "초안→검토→보정",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN25-FINAL-3Team/blob/main/README.md",
+      "file_sha": "af5bb5904ed57f214ef1dea8122a4274400722b4",
+      "branch": "main"
+    },
+    {
+      "name": "SKN25-FINAL-6Team",
+      "title": "GameOps",
+      "domain": "게임 CS",
+      "reason": "상담·승인·운영 평가",
+      "level": "B",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN25-FINAL-6Team/blob/main/README.md",
+      "file_sha": "19aefcf4fe57400e580a5f2c33ceb9c631ac3fda",
+      "branch": "main"
+    },
+    {
+      "name": "SKN26-FINAL-1Team",
+      "title": "HumouR",
+      "domain": "HR",
+      "reason": "작은 sLLM 태스크·학습 전후 비교",
+      "level": "B",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN26-FINAL-1Team/blob/main/README.md",
+      "file_sha": "8d53ab844486be6c59eb20696c8fa79e46c49876",
+      "branch": "main"
+    },
+    {
+      "name": "SKN26-FINAL-4TEAM",
+      "title": "Workit",
+      "domain": "계약·산출물 검토",
+      "reason": "문서 검토 MVP 범위",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN26-FINAL-4TEAM/blob/main/README.md",
+      "file_sha": "d8f070bae7484561a9ac5347d669843cf50fe40a",
+      "branch": "main"
+    },
+    {
+      "name": "SKN29-FINAL-1TEAM",
+      "title": "법인카드 정산",
+      "domain": "재무 운영",
+      "reason": "AI 추출+규칙+사람 확정",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN29-FINAL-1TEAM/blob/main/README.md",
+      "file_sha": "2d88babec64864ae174af93d17fc5329af3d7915",
+      "branch": "main"
+    },
+    {
+      "name": "SKN29-FINAL-2TEAM",
+      "title": "halil",
+      "domain": "프로젝트 운영",
+      "reason": "외부 도구·권한·승인",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN29-FINAL-2TEAM/blob/main/README.md",
+      "file_sha": "04909d468407f74c978207fb101d5a6e3865b7fb",
+      "branch": "main"
+    },
+    {
+      "name": "SKN29-FINAL-3TEAM",
+      "title": "Answervice",
+      "domain": "호텔 데이터 분석",
+      "reason": "검증 가능한 업무 보고서",
+      "level": "B",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN29-FINAL-3TEAM/blob/dev/README.md",
+      "file_sha": "901d61f4363da8bbaff42ce4abb92f071e99186b",
+      "branch": "dev"
+    },
+    {
+      "name": "SKN30-FINAL-1Team",
+      "title": "SalesLuv",
+      "domain": "영업 CRM",
+      "reason": "업무 이력·후속 행동 승인",
+      "level": "C",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN30-FINAL-1Team/blob/main/README.md",
+      "file_sha": "b2214d0445859b4fe2dae92bae37e824e3753ee8",
+      "branch": "main"
+    },
+    {
+      "name": "SKN32-FINAL-3TEAM",
+      "title": "CopyLane",
+      "domain": "마케팅 검수",
+      "reason": "진행 중 사례: 근거·상태·문서 관리",
+      "level": "C·진행 중",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN32-FINAL-3TEAM/blob/main/README.md",
+      "file_sha": "fc40879d6ea0a054511f60d4940a9e1ab8bce068",
+      "branch": "main"
+    }
+  ],
+  "additional_files": [
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "graph/compile.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/graph/compile.py",
+      "file_sha": "5ce2edcce45ad67817e4a0cdb95ea3e3cd904d07",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "graph/nodes/call_llm.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/graph/nodes/call_llm.py",
+      "file_sha": "537dfe960b288f4286cea9e9fea362ac632b57ec",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "graph/nodes/evaluate_chunk.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/graph/nodes/evaluate_chunk.py",
+      "file_sha": "b2ddf966363a0fca0669c48f65345d47c609181a",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "graph/nodes/generate_answer.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/graph/nodes/generate_answer.py",
+      "file_sha": "9fe9447cabeefd038e3e8e368fbb04921fc076ea",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "graph/nodes/retriver.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/graph/nodes/retriver.py",
+      "file_sha": "ec3c73ec29278d3311c4547ef4ea6f492ae52e4c",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "kg/vector_search/eval_ab_v5.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/kg/vector_search/eval_ab_v5.py",
+      "file_sha": "7502cc0b442960f4d04a731143e105906aa91f3e",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "sllm/training/FINAL_SFT_DATASET_CREATION_REPORT.md",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/sllm/training/FINAL_SFT_DATASET_CREATION_REPORT.md",
+      "file_sha": "a05de1f232b553aa280085708a0cd6c52d0455df",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "sllm/training/run_finetune.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/sllm/training/run_finetune.py",
+      "file_sha": "7a282ef4c1e3b5f307a52349ed452bb1b5e914b1",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "sllm/tests/serving_llm_by_runpod.md",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/sllm/tests/serving_llm_by_runpod.md",
+      "file_sha": "ee9a40282cd5fb02ce2458913b508f01ed812351",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": ".github/workflows/test.yml",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/.github/workflows/test.yml",
+      "file_sha": "9d13f7158464fae66d50f5292f797fd896003d65",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "README_meta.md",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/README_meta.md",
+      "file_sha": "71deb8cc45a093655a6b56b4daaa98755f87a6bd",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "graph/llm_config.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/graph/llm_config.py",
+      "file_sha": "52478b1933edaa6594a532bce4b7a301b7852de2",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "rag/retriver/embedding_router.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/rag/retriver/embedding_router.py",
+      "file_sha": "56b4bebf904742932af87842295b0455a6d76cae",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "sllm/training/dataset_auditor.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/sllm/training/dataset_auditor.py",
+      "file_sha": "fc6897538e3179370706589e70f340db4f4bc6ea",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "graph/nodes/classifier.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/graph/nodes/classifier.py",
+      "file_sha": "cfb28e442fd6e6c9abecee9d6ac9189f152232fd",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": ".github/workflows/deploy.yml",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/.github/workflows/deploy.yml",
+      "file_sha": "fb4ace60798a0864ab250f8aaf3e3d59efd7e8d8",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN18-FINAL-2TEAM",
+      "path": "django_app/apps/experiments/views_runpod.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN18-FINAL-2TEAM/blob/main/django_app/apps/experiments/views_runpod.py",
+      "file_sha": "e82dc253ab0fdc7fefe89e804e107db483c7b69e",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN21-FINAL-3TEAM",
+      "path": "ai/finetuning/configs/v3_summary.yaml",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN21-FINAL-3TEAM/blob/main/ai/finetuning/configs/v3_summary.yaml",
+      "file_sha": "4b7f51f2f518f4e0f5842b800907200a93306666",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN21-FINAL-3TEAM",
+      "path": "ai/experiments_v2/FINAL_REPORT.md",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN21-FINAL-3TEAM/blob/main/ai/experiments_v2/FINAL_REPORT.md",
+      "file_sha": "6aff8c77bcdab09d93b0729c58bd233c9ad16b12",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN24-FINAL-3Team",
+      "path": "ALPLED-CORE/workflow/graph.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN24-FINAL-3Team/blob/main/ALPLED-CORE/workflow/graph.py",
+      "file_sha": "fc03ad5ef74e68b4b99e0ec6de00d7973846ab40",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN24-FINAL-3Team",
+      "path": "ALPLED-CORE/supervisor/evaluate/evaluator.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN24-FINAL-3Team/blob/main/ALPLED-CORE/supervisor/evaluate/evaluator.py",
+      "file_sha": "b6e90072aefeb66a7bcf589323c7c2c030ebe07e",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN26-FINAL-1Team",
+      "path": "runpod/masking_handler.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN26-FINAL-1Team/blob/main/runpod/masking_handler.py",
+      "file_sha": "7d519f49e1284a7d8fd01554312a9b180e903683",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN26-FINAL-1Team",
+      "path": "llm/train_star_masking/masking/oversam_exaone_gen_train.ipynb",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN26-FINAL-1Team/blob/main/llm/train_star_masking/masking/oversam_exaone_gen_train.ipynb",
+      "file_sha": "2de53596df187a552e3de7e08e948e3665cc5725",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN29-FINAL-3TEAM",
+      "path": "src/ai/training/README.md",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN29-FINAL-3TEAM/blob/dev/src/ai/training/README.md",
+      "file_sha": "662105111bba76badbb86de9868ab431db386f39",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN29-FINAL-3TEAM",
+      "path": "src/ai/training/train_lora.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN29-FINAL-3TEAM/blob/dev/src/ai/training/train_lora.py",
+      "file_sha": "f9a7e496980f0dcc83554e9882989f7e9340032e",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN25-FINAL-6Team",
+      "path": "apps/chatbot/backend/evals/eval_e2e_workflow_dataset.py",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN25-FINAL-6Team/blob/main/apps/chatbot/backend/evals/eval_e2e_workflow_dataset.py",
+      "file_sha": "d7ff9dc624a68a04036705538cc2f1550aa51a27",
+      "fetch_error": false
+    },
+    {
+      "repository": "SKN25-FINAL-6Team",
+      "path": "docs/eval/cs_auto_eval_summary.md",
+      "url": "https://github.com/SKNETWORKS-FAMILY-AICAMP/SKN25-FINAL-6Team/blob/main/docs/eval/cs_auto_eval_summary.md",
+      "file_sha": "69b59c1e2c6d6c22bc88c85a3771e6811aa127cf",
+      "fetch_error": false
+    }
+  ],
+  "note": "File SHA identifies retrieved file content, not an execution result or a repository commit. Statements from READMEs are reported claims unless specified otherwise."
+}

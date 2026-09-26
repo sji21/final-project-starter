@@ -1,0 +1,93 @@
+{
+  "$defs": {
+    "Document": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$",
+          "title": "Id",
+          "type": "string"
+        },
+        "title": {
+          "maxLength": 160,
+          "minLength": 1,
+          "title": "Title",
+          "type": "string"
+        },
+        "version": {
+          "maxLength": 40,
+          "minLength": 1,
+          "title": "Version",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "basis",
+            "target"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "content": {
+          "maxLength": 30000,
+          "minLength": 1,
+          "title": "Content",
+          "type": "string"
+        },
+        "complete": {
+          "default": true,
+          "title": "Complete",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "title",
+        "version",
+        "role",
+        "content"
+      ],
+      "title": "Document",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "pack_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$",
+      "title": "Pack Id",
+      "type": "string"
+    },
+    "mode": {
+      "default": "demo",
+      "enum": [
+        "demo",
+        "model"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "title": {
+      "default": "새 검토",
+      "maxLength": 160,
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "documents": {
+      "items": {
+        "$ref": "#/$defs/Document"
+      },
+      "maxItems": 8,
+      "minItems": 2,
+      "title": "Documents",
+      "type": "array"
+    }
+  },
+  "required": [
+    "pack_id",
+    "documents"
+  ],
+  "title": "RunRequest",
+  "type": "object"
+}

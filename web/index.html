@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>작업실 — 업무 검토 플랫폼</title>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="module" src="/assets/app.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a href="/" class="brand"><span class="brand-mark">W</span><span>작업실<small>업무 검토 플랫폼</small></span></a>
+    <div class="nav-caption">WORKSPACE</div>
+    <nav aria-label="주 메뉴">
+      <button class="nav active" data-view="workspace"><span>◫</span> 새 검토</button>
+      <button class="nav" data-view="history"><span>◷</span> 실행 기록</button>
+      <button class="nav" data-view="guide"><span>⌘</span> 교체 가이드</button>
+    </nav>
+    <div class="side-note"><span class="status-dot"></span> 로컬 작업 공간<p>입력과 검토 이력을 이 컴퓨터에 저장합니다.</p></div>
+    <div class="side-bottom">TEAM STARTER <span>v0.1</span></div>
+  </aside>
+  <main>
+    <header class="topbar"><div>프로젝트 준비 <span class="slash">/</span> 공통 업무 기반</div><span id="connection" class="connection">연결 중</span></header>
+    <div class="content">
+      <section class="page-heading">
+        <div><p class="eyebrow">REVIEW WORKSPACE</p><h1>근거부터 확인하는 업무 검토</h1><p class="subtitle">기준을 연결하고, 수정안을 검토하고, 결정의 이유를 남기세요.</p></div>
+        <div class="heading-tag">문서 → 검토 → 사람의 결정</div>
+      </section>
+      <div id="notice" role="alert" class="notice hidden"></div>
+      <section id="workspace-view">
+        <div id="packs" class="pack-grid" aria-label="업무 선택"></div>
+        <div class="workspace-grid">
+          <section class="panel input-panel">
+            <div class="panel-heading"><div><span class="step-number">01</span><h2>입력 준비</h2></div><button id="load-example" class="text-button">예제 불러오기</button></div>
+            <label class="field">검토 이름<input id="run-title" maxlength="160" placeholder="검토 이름을 입력하세요"></label>
+            <div class="mode-row"><label class="field">실행 방식<select id="run-mode"><option value="demo">예제 재생</option><option value="model">실제 모델</option></select></label><span id="mode-note" class="mode-note">고정 응답으로 흐름을 확인합니다.</span></div>
+            <div id="documents"></div>
+            <div class="input-footer">
+              <button id="run" class="primary-button">검토 실행 <span>→</span></button>
+              <label class="import-button">JSON 불러오기<input type="file" id="import-json" accept=".json" hidden></label>
+              <p class="fine-print">텍스트 문서를 지원합니다. 원본은 수정하지 않습니다.</p>
+            </div>
+          </section>
+          <section class="result-column">
+            <div class="metrics" id="metrics"></div>
+            <section class="panel result-panel">
+              <div class="panel-heading"><div><span class="step-number">02</span><h2>검토 결과</h2></div><span id="run-badge" class="badge neutral">실행 대기</span></div>
+              <div id="pipeline" class="pipeline"></div>
+              <div id="result-content"></div>
+              <div id="result-footer" class="result-footer hidden"></div>
+            </section>
+          </section>
+        </div>
+      </section>
+      <section id="history-view" class="hidden panel wide-panel">
+        <div class="panel-heading"><div><h2>실행 기록</h2></div><button id="refresh-history" class="text-button">새로고침</button></div>
+        <div id="history-list"></div>
+      </section>
+      <section id="guide-view" class="hidden panel wide-panel">
+        <p class="eyebrow">ONE CORE, DIFFERENT DOMAINS</p><h2>주제가 바뀌면 업무 팩을 교체하세요.</h2>
+        <p class="guide-intro">문서 기반 검토 업무의 공통 흐름은 그대로 사용하고, 업무의 기준과 표현을 바꿉니다.</p>
+        <div class="guide-grid">
+          <article><span>01</span><h3>업무 설정</h3><p>팩 이름, 입력 문서 이름, 판정 라벨, 학습 태스크를 정합니다.</p><code>packs/&lt;topic&gt;/manifest.json</code></article>
+          <article><span>02</span><h3>역할별 지시문</h3><p>기준 추출, 검토 초안, 독립 검증 역할의 업무 지시문을 바꿉니다.</p><code>packs/&lt;topic&gt;/prompts/</code></article>
+          <article><span>03</span><h3>자료와 모델</h3><p>실제 업무 자료와 정답셋을 준비하고, 학습한 모델 또는 어댑터를 연결합니다.</p><code>MODEL_REVIEW</code></article>
+        </div>
+        <div class="guide-callout"><h3>현재 포함된 공통 기능</h3><p>실행 상태 · 문서 버전 · 근거 원문 확인 · 사람 검토 · 변경 이력 · 보고서 · 호출 기록</p><p>외부 도구 실행, 음성, OCR, 조직 로그인처럼 업무마다 달라지는 기능은 별도 연결이 필요합니다.</p></div>
+        <p class="fine-print">예제 재생은 모델 호출을 하지 않습니다. 실제 모델 모드는 서버에 모델 주소와 이름을 설정한 뒤 사용할 수 있습니다.</p>
+      </section>
+    </div>
+  </main>
+  <dialog id="evidence-dialog"><div class="dialog-heading"><h2 id="evidence-title">근거 원문</h2><button id="close-evidence" aria-label="근거 창 닫기" class="icon-button">×</button></div><p id="evidence-meta" class="fine-print"></p><pre id="evidence-text"></pre></dialog>
+</body>
+</html>
+

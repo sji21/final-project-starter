@@ -1,0 +1,18 @@
+[project]
+name = "topic-platform"
+version = "0.1.0"
+description = "Domain-swappable agent review workspace"
+requires-python = ">=3.12"
+dependencies = ["fastapi==0.141.1", "uvicorn==0.54.0", "httpx==0.28.1", "pydantic==2.13.5"]
+
+[project.optional-dependencies]
+dev = ["pytest==9.1.1", "ruff==0.16.9"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+

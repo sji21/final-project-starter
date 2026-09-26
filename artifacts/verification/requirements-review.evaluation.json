@@ -1,0 +1,95 @@
+{
+  "run_id": "c5b100e6-d435-4f74-895c-36199c387d0a",
+  "dataset_id": "requirements-review-demo-v1",
+  "documents_hash": "48cfcc855b9f863db7b5696cb26349ca54797f2ba2e30f1f8b823460db1aa475",
+  "mode": "demo",
+  "purpose": "fixture_regression_only",
+  "human_reviewed_gold": false,
+  "model_quality_measured": false,
+  "metric_name": "fixture_or_draft_label_agreement",
+  "label_agreement": 1.0,
+  "macro_f1_supported_labels": 1.0,
+  "per_label": {
+    "covered": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 2,
+      "predicted": 2
+    },
+    "partial": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1,
+      "predicted": 1
+    },
+    "missing": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1,
+      "predicted": 1
+    },
+    "conflict": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1,
+      "predicted": 1
+    },
+    "needs_review": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1,
+      "predicted": 1
+    }
+  },
+  "confusion": {
+    "covered": {
+      "covered": 2,
+      "partial": 0,
+      "missing": 0,
+      "conflict": 0,
+      "needs_review": 0,
+      "not_predicted": 0
+    },
+    "partial": {
+      "covered": 0,
+      "partial": 1,
+      "missing": 0,
+      "conflict": 0,
+      "needs_review": 0,
+      "not_predicted": 0
+    },
+    "missing": {
+      "covered": 0,
+      "partial": 0,
+      "missing": 1,
+      "conflict": 0,
+      "needs_review": 0,
+      "not_predicted": 0
+    },
+    "conflict": {
+      "covered": 0,
+      "partial": 0,
+      "missing": 0,
+      "conflict": 1,
+      "needs_review": 0,
+      "not_predicted": 0
+    },
+    "needs_review": {
+      "covered": 0,
+      "partial": 0,
+      "missing": 0,
+      "conflict": 0,
+      "needs_review": 1,
+      "not_predicted": 0
+    }
+  },
+  "missing_predictions": [],
+  "unexpected_predictions": [],
+  "gold_evidence_recall_in_presented_context": 1.0,
+  "note": "데모 또는 미검수 정답과의 일치도입니다. 모델 성능으로 해석하지 마세요."
+}

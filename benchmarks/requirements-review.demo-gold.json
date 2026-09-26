@@ -1,0 +1,51 @@
+{
+  "dataset_id": "requirements-review-demo-v1",
+  "pack_id": "requirements-review",
+  "purpose": "fixture_regression_only",
+  "human_reviewed": false,
+  "documents_hash": "48cfcc855b9f863db7b5696cb26349ca54797f2ba2e30f1f8b823460db1aa475",
+  "items": [
+    {
+      "criterion_id": "REQ-01",
+      "verdict": "partial",
+      "evidence_chunk_ids": [
+        "TARGET:p1"
+      ]
+    },
+    {
+      "criterion_id": "REQ-02",
+      "verdict": "conflict",
+      "evidence_chunk_ids": [
+        "TARGET:p2"
+      ]
+    },
+    {
+      "criterion_id": "REQ-03",
+      "verdict": "covered",
+      "evidence_chunk_ids": [
+        "TARGET:p3",
+        "TARGET:p4"
+      ]
+    },
+    {
+      "criterion_id": "REQ-04",
+      "verdict": "missing",
+      "evidence_chunk_ids": []
+    },
+    {
+      "criterion_id": "REQ-05",
+      "verdict": "covered",
+      "evidence_chunk_ids": [
+        "TARGET:p5",
+        "TARGET:p6"
+      ]
+    },
+    {
+      "criterion_id": "REQ-06",
+      "verdict": "needs_review",
+      "evidence_chunk_ids": [
+        "TARGET:p7"
+      ]
+    }
+  ]
+}

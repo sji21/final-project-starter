@@ -1,0 +1,264 @@
+{
+  "id": "97f79aa9-ad7c-4a84-a5c6-5234c81d0ef8",
+  "revision": 16,
+  "status": "awaiting_review",
+  "stage": "human_review",
+  "created_at": "2026-09-26T11:03:03.170816+00:00",
+  "updated_at": "2026-09-26T11:03:03.333925+00:00",
+  "request": {
+    "pack_id": "cs-quality",
+    "mode": "demo",
+    "title": "CS 답변 검수 예제",
+    "documents": [
+      {
+        "id": "BASIS",
+        "title": "반품 정책",
+        "version": "v1",
+        "role": "basis",
+        "content": "POL-01 | 미사용 상품의 단순 변심 반품은 상품 수령 후 7일 이내에만 접수할 수 있다.\n\nPOL-02 | 단순 변심 반품 배송비는 고객이 부담한다.\n\nPOL-03 | 반품 안내 답변에는 접수 경로 '마이페이지 → 주문내역 → 반품 신청'을 안내해야 한다.",
+        "complete": true
+      },
+      {
+        "id": "TARGET",
+        "title": "고객 문의 · 답변 초안",
+        "version": "v1",
+        "role": "target",
+        "content": "고객 문의: 상품을 받은 지 10일이 지났습니다. 사용하지 않았는데 단순 변심으로 반품할 수 있나요?\n\n답변 초안: 미사용 상품은 수령 후 14일 이내이므로 반품하실 수 있습니다. 반품 배송비는 고객님 부담입니다. 웹사이트에서 반품을 접수해 주세요.",
+        "complete": true
+      }
+    ]
+  },
+  "pack": {
+    "id": "cs-quality",
+    "name": "CS 답변 검수",
+    "version": "0.1.0",
+    "description": "가상의 반품 정책을 기준으로 상담 답변 초안의 정확성과 안내 누락을 검토합니다.",
+    "basis_label": "반품 정책",
+    "target_label": "고객 문의 · 답변 초안",
+    "task": "가상의 회사 정책과 상담 답변을 비교한다. 정책에 없는 법률·보상 기준을 만들지 않는다. 고객 문의와 답변을 구분한다.",
+    "training_task": "정책과 상담 답변에서 불일치와 누락을 찾아 근거와 수정 문장을 만든다.",
+    "accent": "#157a6e",
+    "labels": {
+      "covered": "충족",
+      "partial": "부분 충족",
+      "missing": "미기재",
+      "conflict": "불일치",
+      "needs_review": "확인 필요"
+    },
+    "fingerprint": "881e58a9d1d0b057f4f8baec4267aaae5d804bc5b1b077bd56b0086edb8952d8"
+  },
+  "input_hash": "a7a365efa8a2fa959bd190100d718eeb4e81b29d23b683674818d390f14102ea",
+  "criteria": [
+    {
+      "id": "POL-01",
+      "title": "미사용 상품의 단순 변심 반품은 상품 수령 후 7일 이내에만 접수할 수 있다.",
+      "description": "미사용 상품의 단순 변심 반품은 상품 수령 후 7일 이내에만 접수할 수 있다.",
+      "source": {
+        "chunk_id": "BASIS:p1",
+        "quote": "미사용 상품의 단순 변심 반품은 상품 수령 후 7일 이내에만 접수할 수 있다."
+      }
+    },
+    {
+      "id": "POL-02",
+      "title": "단순 변심 반품 배송비는 고객이 부담한다.",
+      "description": "단순 변심 반품 배송비는 고객이 부담한다.",
+      "source": {
+        "chunk_id": "BASIS:p2",
+        "quote": "단순 변심 반품 배송비는 고객이 부담한다."
+      }
+    },
+    {
+      "id": "POL-03",
+      "title": "반품 안내 답변에는 접수 경로 '마이페이지 → 주문내역 → 반품 신청'을 안내해야 한다.",
+      "description": "반품 안내 답변에는 접수 경로 '마이페이지 → 주문내역 → 반품 신청'을 안내해야 한다.",
+      "source": {
+        "chunk_id": "BASIS:p3",
+        "quote": "반품 안내 답변에는 접수 경로 '마이페이지 → 주문내역 → 반품 신청'을 안내해야 한다."
+      }
+    }
+  ],
+  "chunks": [
+    {
+      "id": "BASIS:p1",
+      "document_id": "BASIS",
+      "document_title": "반품 정책",
+      "document_version": "v1",
+      "role": "basis",
+      "text": "POL-01 | 미사용 상품의 단순 변심 반품은 상품 수령 후 7일 이내에만 접수할 수 있다.",
+      "paragraph": 1
+    },
+    {
+      "id": "BASIS:p2",
+      "document_id": "BASIS",
+      "document_title": "반품 정책",
+      "document_version": "v1",
+      "role": "basis",
+      "text": "POL-02 | 단순 변심 반품 배송비는 고객이 부담한다.",
+      "paragraph": 2
+    },
+    {
+      "id": "BASIS:p3",
+      "document_id": "BASIS",
+      "document_title": "반품 정책",
+      "document_version": "v1",
+      "role": "basis",
+      "text": "POL-03 | 반품 안내 답변에는 접수 경로 '마이페이지 → 주문내역 → 반품 신청'을 안내해야 한다.",
+      "paragraph": 3
+    },
+    {
+      "id": "TARGET:p1",
+      "document_id": "TARGET",
+      "document_title": "고객 문의 · 답변 초안",
+      "document_version": "v1",
+      "role": "target",
+      "text": "고객 문의: 상품을 받은 지 10일이 지났습니다. 사용하지 않았는데 단순 변심으로 반품할 수 있나요?",
+      "paragraph": 1
+    },
+    {
+      "id": "TARGET:p2",
+      "document_id": "TARGET",
+      "document_title": "고객 문의 · 답변 초안",
+      "document_version": "v1",
+      "role": "target",
+      "text": "답변 초안: 미사용 상품은 수령 후 14일 이내이므로 반품하실 수 있습니다. 반품 배송비는 고객님 부담입니다. 웹사이트에서 반품을 접수해 주세요.",
+      "paragraph": 2
+    }
+  ],
+  "retrieval": {
+    "POL-01": {
+      "chunk_ids": [
+        "TARGET:p2",
+        "TARGET:p1"
+      ],
+      "scores": [
+        0.1522,
+        0.1333
+      ],
+      "all_target_chunks_presented": true,
+      "strategy": "full_scope_with_lexical_ranking"
+    },
+    "POL-02": {
+      "chunk_ids": [
+        "TARGET:p2",
+        "TARGET:p1"
+      ],
+      "scores": [
+        0.1235,
+        0.0938
+      ],
+      "all_target_chunks_presented": true,
+      "strategy": "full_scope_with_lexical_ranking"
+    },
+    "POL-03": {
+      "chunk_ids": [
+        "TARGET:p2",
+        "TARGET:p1"
+      ],
+      "scores": [
+        0.0481,
+        0.0353
+      ],
+      "all_target_chunks_presented": true,
+      "strategy": "full_scope_with_lexical_ranking"
+    }
+  },
+  "items": [
+    {
+      "criterion_id": "POL-01",
+      "verdict": "conflict",
+      "reason": "정책은 7일 이내인데 답변은 14일 이내로 안내한다.",
+      "evidence": [
+        {
+          "chunk_id": "TARGET:p2",
+          "quote": "답변 초안: 미사용 상품은 수령 후 14일 이내이므로 반품하실 수 있습니다. 반품 배송비는 고객님 부담입니다. 웹사이트에서 반품을 접수해 주세요."
+        }
+      ],
+      "suggestion": "정책상 단순 변심 반품은 수령 후 7일 이내 접수 가능하므로, 10일이 지난 현재 조건에서는 접수 대상이 아니라고 안내한다.",
+      "validation_issues": [],
+      "decision": null
+    },
+    {
+      "criterion_id": "POL-02",
+      "verdict": "covered",
+      "reason": "단순 변심 반품 배송비가 고객 부담임을 안내한다.",
+      "evidence": [
+        {
+          "chunk_id": "TARGET:p2",
+          "quote": "답변 초안: 미사용 상품은 수령 후 14일 이내이므로 반품하실 수 있습니다. 반품 배송비는 고객님 부담입니다. 웹사이트에서 반품을 접수해 주세요."
+        }
+      ],
+      "suggestion": null,
+      "validation_issues": [],
+      "decision": null
+    },
+    {
+      "criterion_id": "POL-03",
+      "verdict": "partial",
+      "reason": "웹사이트 접수는 안내하지만 구체적인 메뉴 경로가 없다.",
+      "evidence": [
+        {
+          "chunk_id": "TARGET:p2",
+          "quote": "답변 초안: 미사용 상품은 수령 후 14일 이내이므로 반품하실 수 있습니다. 반품 배송비는 고객님 부담입니다. 웹사이트에서 반품을 접수해 주세요."
+        }
+      ],
+      "suggestion": "접수 가능한 고객에게는 '마이페이지 → 주문내역 → 반품 신청' 경로를 안내한다.",
+      "validation_issues": [],
+      "decision": null
+    }
+  ],
+  "trace": [
+    {
+      "stage": "normalize",
+      "duration_ms": 0,
+      "kind": "deterministic",
+      "billable_model_call": false
+    },
+    {
+      "stage": "extract",
+      "duration_ms": 0,
+      "provider": "fixture_replay",
+      "model": "recorded-demo-v1",
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "attempts": 0,
+      "billable_model_call": false,
+      "prompt_hash": "1ce60be2b9e78936eed64c24f2787fa97ac4803a260b5e47c5083a4e84ab0e12"
+    },
+    {
+      "stage": "retrieve",
+      "duration_ms": 0,
+      "kind": "lexical_retrieval",
+      "billable_model_call": false
+    },
+    {
+      "stage": "review",
+      "duration_ms": 0,
+      "provider": "fixture_replay",
+      "model": "recorded-demo-v1",
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "attempts": 0,
+      "billable_model_call": false,
+      "prompt_hash": "996105f73cbf6d08cdebcf6fcc1779554f57c3a6cbf5a14f6ac95b9b01457d7f"
+    },
+    {
+      "stage": "critic",
+      "duration_ms": 0,
+      "provider": "fixture_replay",
+      "model": "recorded-demo-v1",
+      "prompt_tokens": null,
+      "completion_tokens": null,
+      "attempts": 0,
+      "billable_model_call": false,
+      "prompt_hash": "247e30df0e5a4d6b5c7da9842b3cf4764fa74a149293829ccb9bdda8f2ef06c4"
+    }
+  ],
+  "audit": [],
+  "error": null,
+  "provenance": {
+    "engine_version": "0.1.0",
+    "pack_hash": "881e58a9d1d0b057f4f8baec4267aaae5d804bc5b1b077bd56b0086edb8952d8",
+    "execution": "fixture_replay",
+    "demo_is_not_model_quality": true
+  }
+}
