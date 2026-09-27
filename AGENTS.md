@@ -28,9 +28,21 @@
 
 - Do not create a file that was not asked for. Extend the document that already covers it.
 - One document per subject. A new file needs a subject no existing file owns.
-- No summary, index or status file that restates what other files already say.
+- No summary, index or status file that restates what other files already say. CHANGELOG.md is the one exception.
 - Notes about one change go in the pull request, not in a new document.
 - Write to the repository only what belongs under version control. Working notes stay out.
+
+## Repository
+
+- One repository. Do not run a separate development and main repository.
+- Indexes, checkpoints, corpora, model weights and databases stay out of Git.
+  Commit a manifest with sizes and hashes, and keep the artifacts where they are built.
+- Task state lives in issues and the project board, never in a tracked table five people edit.
+  A markdown task list works for one author and conflicts on every merge for five.
+- The pull request is the primary record of a change: problem, visible change, cases checked,
+  compatibility, and what was not verified.
+- CHANGELOG.md summarises releases, not commits. Update it at the Friday demo and at each tag,
+  in one language, with a Validation entry stating what was actually run and what was not.
 
 ## How we work
 
