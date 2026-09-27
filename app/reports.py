@@ -1,15 +1,23 @@
-import html
+def inline(value):
+    """Inline Markdown text.
+
+    Raw HTML is neutralized with a Markdown backslash escape so a rendered report
+    cannot execute document content, while quotes and ampersands stay as typed.
+    HTML entity escaping would corrupt the plain .md file that reviewers read.
+    """
+    return str(value).replace("<", "\\<").replace("\n", " ")
 
 
-def safe(value):
-    return html.escape(str(value)).replace("|", "\\|").replace("\n", " ")
+def cell(value):
+    """Table cell text: inline rules plus the pipe escape that keeps the row intact."""
+    return inline(value).replace("|", "\\|")
 
 
 def markdown_report(run):
     lines = [
-        f"# {safe(run['request']['title'])}",
+        f"# {inline(run['request']['title'])}",
         "",
-        f"- 업무: {safe(run['pack']['name'])} / {safe(run['pack']['version'])}",
+        f"- 업무: {inline(run['pack']['name'])} / {inline(run['pack']['version'])}",
         f"- 실행 ID: {run['id']}",
         f"- 실행 모드: {run['provenance']['execution']}",
         f"- 상태: {run['status']} / revision {run['revision']}",
@@ -42,7 +50,7 @@ def markdown_report(run):
         lines.append(
             "| "
             + " | ".join(
-                safe(value or "—")
+                cell(value or "—")
                 for value in (
                     item["criterion_id"],
                     run["pack"]["labels"][item["verdict"]],
@@ -55,20 +63,20 @@ def markdown_report(run):
         )
     lines += ["", "## 근거와 확인 사항", ""]
     for item in run["items"]:
-        lines += [f"### {safe(item['criterion_id'])}", ""]
+        lines += [f"### {inline(item['criterion_id'])}", ""]
         for citation in item["evidence"]:
-            lines.append(f"- {safe(citation['chunk_id'])}: {safe(citation['quote'])}")
+            lines.append(f"- {inline(citation['chunk_id'])}: {inline(citation['quote'])}")
         for issue in item["validation_issues"]:
-            lines.append(f"- 확인 필요: {safe(issue)}")
+            lines.append(f"- 확인 필요: {inline(issue)}")
     lines += ["", "## 문서 버전", ""]
     for document in run["request"]["documents"]:
         lines.append(
-            f"- {safe(document['id'])}: {safe(document['title'])} / {safe(document['version'])}"
+            f"- {inline(document['id'])}: {inline(document['title'])} / {inline(document['version'])}"
         )
     lines += ["", "## 실행 이력", ""]
     for event in run["trace"]:
         lines.append(
-            f"- {event['stage']}: {event['duration_ms']}ms / {safe(event.get('model', event.get('kind', '')))}"
+            f"- {event['stage']}: {event['duration_ms']}ms / {inline(event.get('model', event.get('kind', '')))}"
         )
     return "\n".join(lines) + "\n"
 

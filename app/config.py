@@ -10,6 +10,13 @@ ROOT = Path(__file__).resolve().parents[1]
 class Settings:
     data_dir: Path = field(default_factory=lambda: Path(os.getenv("APP_DATA_DIR", ROOT / ".data")))
     packs_dir: Path = ROOT / "packs"
+    allowed_hosts: tuple[str, ...] = field(
+        default_factory=lambda: tuple(
+            host.strip()
+            for host in os.getenv("APP_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+            if host.strip()
+        )
+    )
     model_base_url: str = field(default_factory=lambda: os.getenv("MODEL_BASE_URL", "").rstrip("/"))
     model_api_key: str = field(default_factory=lambda: os.getenv("MODEL_API_KEY", ""))
     model_name: str = field(default_factory=lambda: os.getenv("MODEL_NAME", ""))

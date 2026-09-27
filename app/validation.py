@@ -1,4 +1,8 @@
+import logging
+
 from app.errors import AppError
+
+logger = logging.getLogger(__name__)
 
 
 def check_citation(citation, chunks, role=None, allowed=None):
@@ -55,11 +59,12 @@ def validate_findings(findings, criteria, chunks, retrieval, documents):
 def apply_critique(items, critique):
     by_id = {item["criterion_id"]: item for item in items}
     for issue in critique.issues:
-        if issue.criterion_id not in by_id:
-            raise AppError(
-                "INVALID_CRITIC_TARGET", "검증 역할이 알 수 없는 기준을 참조했습니다.", 422
-            )
-        item = by_id[issue.criterion_id]
+        item = by_id.get(issue.criterion_id)
+        if item is None:
+            # A critic naming an unknown criterion is a model-quality problem, not a
+            # reason to discard findings that already passed evidence validation.
+            logger.warning("Critic referenced unknown criterion: %s", issue.criterion_id)
+            continue
         item["verdict"] = "needs_review"
         item["validation_issues"].append("검증 역할: " + issue.reason)
     return items

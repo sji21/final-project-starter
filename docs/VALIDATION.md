@@ -54,6 +54,30 @@ training/records.example.jsonl에 dataset-check를 실행했습니다. 규격 �
 
 2026-09-27 개인 비공개 저장소 sji21/final-project-starter에 업로드했습니다. 최초 코드 커밋 06d4394e7bcc03a3a1ebabad06409a5ab1246835의 [GitHub Actions 검사](https://github.com/sji21/final-project-starter/actions/runs/36255693667)가 Ubuntu·Python 3.12에서 통과했습니다. 검사 항목은 코드 린트·서식·자동 테스트·JavaScript 구문 검사입니다.
 
+## 결함 수정 검증
+
+검증일: 2026-09-27 · Windows · Python 3.14.0 · Node.js 24.13.1.
+
+코드 검토에서 확인한 결함 4건을 수정했습니다. 선언 버전은 3.12이지만 이번 검증은 3.14에서 실행했습니다.
+
+| 검사 | 실제 결과 |
+| --- | --- |
+| python -m ruff check app tests | 통과 |
+| python -m ruff format --check app tests | 24개 파일 통과 |
+| python -m pytest -q | **41 passed**, 4.04초 |
+| node --check web/app.js | 통과 |
+
+수정 항목과 회귀 테스트:
+
+- 보고서가 Markdown 산출물에 HTML 엔터티 이스케이프를 적용해 따옴표가 `&#x27;`로 깨지던 문제. 표 셀과 본문 이스케이프를 분리했습니다.
+- 업무 팩 조회가 내장 KeyError를 던지고 전역 처리기가 모든 KeyError를 404로 바꾸던 문제. 도메인 오류로 교체하고 처리기를 제거했습니다.
+- 검증 역할이 존재하지 않는 기준을 참조하면 이미 근거 검사를 통과한 결과까지 버리고 실행 전체가 실패하던 문제. 해당 참조만 기록하고 넘어갑니다.
+- 허용 Host 목록에 테스트 전용 호스트가 하드코딩되어 있던 문제. APP_ALLOWED_HOSTS 설정으로 옮겼습니다.
+
+각 회귀 테스트가 수정 전 코드에서 실패하는 것을 해당 파일만 되돌려 확인했습니다. 보고서 출력은 실행 후 실제 파일에서 엔터티 잔류가 없음을 확인했습니다.
+
+이 커밋의 GitHub Actions 결과는 아직 확인하지 않았습니다. 업로드 후 확인해야 합니다.
+
 ## 남은 검증
 
 - 실제 모델·LoRA 연결, 구조화 출력 지원, GPU 메모리·지연·비용.

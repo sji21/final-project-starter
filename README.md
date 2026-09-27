@@ -45,7 +45,7 @@ python3.12 -m venv .venv
 브라우저: [http://127.0.0.1:8765](http://127.0.0.1:8765)  
 API 계약: [OpenAPI](http://127.0.0.1:8765/openapi.json), [API 문서](http://127.0.0.1:8765/docs)
 
-종료는 서버 터미널에서 Ctrl+C입니다. 실행 데이터는 기본 .data/workspace.sqlite3에 남습니다. APP_DATA_DIR 환경변수로 저장 위치를 바꿀 수 있습니다. 프런트엔드 빌드나 npm 설치는 필요하지 않습니다.
+종료는 서버 터미널에서 Ctrl+C입니다. 실행 데이터는 기본 .data/workspace.sqlite3에 남습니다. APP_DATA_DIR 환경변수로 저장 위치를 바꿀 수 있습니다. 허용 Host 목록은 APP_ALLOWED_HOSTS로 바꾸며 기본값은 localhost,127.0.0.1입니다. 프런트엔드 빌드나 npm 설치는 필요하지 않습니다.
 
 ## 3분 확인 순서
 

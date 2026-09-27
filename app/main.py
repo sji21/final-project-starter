@@ -33,9 +33,7 @@ def create_app(settings=None, provider_factory=None):
     app.state.store = store
     app.state.workflow = workflow
     app.state.registry = registry
-    app.add_middleware(
-        TrustedHostMiddleware, allowed_hosts=["localhost", "127.0.0.1", "testserver"]
-    )
+    app.add_middleware(TrustedHostMiddleware, allowed_hosts=list(settings.allowed_hosts))
 
     @app.middleware("http")
     async def local_request_boundary(request: Request, call_next):
@@ -73,13 +71,6 @@ def create_app(settings=None, provider_factory=None):
     async def app_error(request, exc):
         return JSONResponse(
             {"error": {"code": exc.code, "message": exc.message}}, status_code=exc.status
-        )
-
-    @app.exception_handler(KeyError)
-    async def missing_pack(request, exc):
-        return JSONResponse(
-            {"error": {"code": "PACK_NOT_FOUND", "message": "업무 팩을 찾을 수 없습니다."}},
-            status_code=404,
         )
 
     @app.get("/api/health")

@@ -7,7 +7,12 @@ from app.main import create_app
 
 @pytest.fixture
 def settings(tmp_path):
-    return Settings(data_dir=tmp_path, model_base_url="", model_name="")
+    return Settings(
+        data_dir=tmp_path,
+        model_base_url="",
+        model_name="",
+        allowed_hosts=("localhost", "127.0.0.1", "testserver"),
+    )
 
 
 @pytest.fixture

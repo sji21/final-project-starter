@@ -5,6 +5,7 @@ from concurrent.futures import ThreadPoolExecutor
 import pytest
 from fastapi.testclient import TestClient
 
+from app.config import Settings
 from app.errors import AppError
 from app.main import create_app
 from app.models import DecisionRequest, RunRequest
@@ -195,3 +196,28 @@ def test_static_ui_and_openapi_are_served(client):
     assert "frame-ancestors 'none'" in client.get("/").headers["Content-Security-Policy"]
     assert client.get("/assets/app.js").status_code == 200
     assert "/api/runs" in client.get("/openapi.json").json()["paths"]
+
+
+def test_unknown_critic_target_does_not_discard_valid_findings(settings):
+    def provider(request, pack):
+        altered = copy.deepcopy(pack)
+        altered.responses["critic"]["issues"] = [
+            {"criterion_id": "REQ-02", "reason": "실제 확인 필요"},
+            {"criterion_id": "NOT-A-CRITERION", "reason": "존재하지 않는 기준"},
+        ]
+        return DemoProvider(altered, request.documents)
+
+    app = create_app(settings, provider_factory=provider)
+    with TestClient(app) as client:
+        run = finish(client, client.get("/api/packs/requirements-review/example").json())
+        assert run["status"] == "awaiting_review"
+        assert len(run["items"]) == 6
+        by_id = {item["criterion_id"]: item for item in run["items"]}
+        assert by_id["REQ-02"]["verdict"] == "needs_review"
+
+
+def test_allowed_hosts_are_configuration_not_a_baked_in_test_host(tmp_path):
+    assert "testserver" not in Settings().allowed_hosts
+    app = create_app(Settings(data_dir=tmp_path, allowed_hosts=("localhost",)))
+    with TestClient(app) as client:
+        assert client.get("/api/health").status_code == 400

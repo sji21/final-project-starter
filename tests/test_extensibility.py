@@ -2,10 +2,13 @@ import json
 import shutil
 
 import httpx
+import pytest
 from fastapi.testclient import TestClient
 
 from app.config import ROOT, Settings
+from app.errors import AppError
 from app.main import create_app
+from app.packs import PackRegistry
 from app.providers import ModelProvider
 from tests.test_workflow import finish
 
@@ -21,7 +24,13 @@ def test_new_pack_is_discovered_without_core_changes(tmp_path):
     example = json.loads((folder / "example.json").read_text(encoding="utf-8"))
     example["pack_id"] = "custom-topic"
     (folder / "example.json").write_text(json.dumps(example), encoding="utf-8")
-    app = create_app(Settings(data_dir=tmp_path / "db", packs_dir=packs))
+    app = create_app(
+        Settings(
+            data_dir=tmp_path / "db",
+            packs_dir=packs,
+            allowed_hosts=("localhost", "127.0.0.1", "testserver"),
+        )
+    )
     with TestClient(app) as client:
         assert client.get("/api/packs").json()["packs"][0]["id"] == "custom-topic"
         run = finish(client, example)
@@ -73,3 +82,14 @@ def test_model_mode_three_role_http_contract(settings):
         assert metrics["prompt_tokens"] == 30
         assert metrics["completion_tokens"] == 15
         assert metrics["cost"] is None
+
+
+def test_unknown_pack_raises_a_domain_error(client, settings):
+    registry = PackRegistry(settings.packs_dir)
+    with pytest.raises(AppError) as error:
+        registry.get("no-such-pack")
+    assert error.value.code == "PACK_NOT_FOUND"
+    assert error.value.status == 404
+    body = client.get("/api/packs/no-such-pack/example")
+    assert body.status_code == 404
+    assert body.json()["error"]["code"] == "PACK_NOT_FOUND"

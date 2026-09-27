@@ -3,6 +3,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
+from app.errors import AppError
 from app.models import Manifest, RunRequest
 
 
@@ -49,5 +50,5 @@ class PackRegistry:
 
     def get(self, pack_id: str):
         if pack_id not in self.packs:
-            raise KeyError("업무 팩을 찾을 수 없습니다.")
+            raise AppError("PACK_NOT_FOUND", "업무 팩을 찾을 수 없습니다.", 404)
         return self.packs[pack_id]
